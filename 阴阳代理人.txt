@@ -1,0 +1,56 @@
+{
+  "site": "http://www.yinyangdailiren.org",
+  "type": "0",
+  "showName": "阴阳代理人",
+  "group": "115",
+  "searchGroup": "1",
+  "version": "1.0.0",
+  "desc": "阴阳代理人",
+  "requestHeaders": "{}",
+  "queryType": "xpath",
+
+  "searchRule": {
+    "authorSearch": "",
+    "nameSearch": "{\"queryPath\":\"http://www.yinyangdailiren.org/s.php?ie=utf-8&q={{key}}\",\"method\":\"GET\",\"request_body\":{},\"request_headers\":{},\"response_charset\":\"utf8\"}",
+    "listQuery": "//*[@class=\"type_show\"]/div",
+    "nameRule": "/*[@class=\"p10\"]/div[2]/h4/a/text()",
+    "authorRule": "//*[@class=\"p10\"]/div[2]/div[2]/text(),@reg:#.*：#",
+    "kindRule": "//*[@class=\"p10\"]/div[2]/div[1]",
+    "countRule": "",
+    "starRule": "",
+    "newChapterRule": "//*[@class=\"p10\"]/div[2]/div[3]/a/text()",
+    "descRule": "",
+    "coverRule": "/*[@class=\"p10\"]/div[1]/a/img/@src,@reg:#.*#http://www.yinyangdailiren.org{{$0}}",
+    "detailPageUrlRule": "/*[@class=\"p10\"]/div[2]/h4/a/@href,@reg:#.*#http://www.yinyangdailiren.org{{$0}}"
+  },
+  "detailPageRule": {
+    "detailQuery": "{\"queryPath\":\"{{detailUrl}}\",\"method\":\"GET\",\"request_body\":{},\"request_headers\":{},\"response_charset\":\"utf8\" }",
+    "nameRule": "//*[@class=\"info\"]/h2/text()",
+    "authorRule": "//*[@class=\"info\"]/div[2]/span[1]/text(),@reg:#.*：#",
+    "kindRule": "//*[@class=\"info\"]/div[2]/span[2]/text(),@reg:#.*：#",
+    "countRule": "//*[@class=\"info\"]/div[2]/span[4]/text()",
+    "starRule": "",
+    "newChapterRule": "//*[@class=\"info\"]/div[2]/span[6]/a/text()",
+    "descRule": "//*[@class=\"info\"]/div[3]/text(),@reg:#无弹窗推荐地址：.*#",
+    "coverRule": "//*[@class=\"info\"]/div[1]/img/@src,@reg:#.*#http://www.yinyangdailiren.org{{$0}}",
+    "tocRule": "@this"
+  },
+  "tocRule": {
+    "tocQuery": "{\"queryPath\":\"{{tocUrle}}\",\"method\":\"get\",\"request_body\":{},\"request_headers\":{},\"response_charset\":\"utf8\" }",
+    "chapterListQuery": "//*[@class=\"listmain\"]/dl/dd[position()>12]",
+    "chapterNameRule": "//a/text()",
+    "chapterUrlRule": "//a/@href,@reg:#.*#http://www.yinyangdailiren.org{{$0}}",
+    "updateTimeRule": "",
+    "nextChapterUrlRule": "",
+    "nextChapterNameRule": null,
+    "nextChapterKey": ""
+  },
+  "contentRule": {
+    "contentQuery": "{\"queryPath\":\"{{contentUrl}}\",\"method\":\"get\",\"request_body\":{},\"request_headers\":{},\"response_charset\":\"utf8\" }",
+    "webview": "0",
+    "contentRule": "//*[@id=\"content\"]/text(),@reg:#http://www.yinyangdailiren.org.*#",
+    "contentNextUrlRule": "",
+    "contentNextNameRule": "",
+    "contentNextKey": ""
+  }
+}
